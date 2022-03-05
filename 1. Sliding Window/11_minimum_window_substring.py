@@ -4,7 +4,7 @@
 # Output: "abdec"
 # Explanation: The smallest substring having all characters of the pattern is "abdec"
 # Leetcode Equivalent: https://leetcode.com/problems/minimum-window-substring/
-# Optimal solution:
+# Optimal solution: O(N)
 
 def minWindow(s, t):
 
