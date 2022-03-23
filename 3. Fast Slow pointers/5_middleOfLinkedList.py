@@ -12,7 +12,12 @@ class Node:
         self.next = next
 
 
-def hasCycle(head):
+def middleNode(head) -> Optional[ListNode]:
+    slow, fast = head, head
+    while fast is not None and fast.next is not None:
+        slow = slow.next
+        fast = fast.next.next
+    return slow
 
 
 if __name__ == "__main__":
