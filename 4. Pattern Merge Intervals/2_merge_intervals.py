@@ -9,19 +9,22 @@
 # Optimal solution: O(N*logN)
 
 def merge(intervals):
+    # sort the array according to what we need
     intervals.sort(key=lambda x: x[0])
-    if len(intervals) < 2:
-        return intervals
-
-    output = [intervals[0]]
+    # want the first element in the intervals array
+    result = [intervals[0]]
+    # iterate through the intervals starting from 2nd element as the 1st is in the result array
     for start, end in intervals[1:]:
-        lastEnd = output[-1][1]
+        # get the last element's last value
+        lastEnd = result[-1][1]
+        # if the start of the new element being added is smaller than the end of the last item added
         if start <= lastEnd:
-            output[-1][1] = max(lastEnd, end)
+            # it means that it overlaps and we can get the max of the two intervals' ends to add
+            result[-1][1] = max(end, lastEnd)
         else:
-            output.append([start, end])
-
-    return output
+            # if it doesnt overlap add as a non overlapping interval
+            result.append([start, end])
+    return result
 
 
 if __name__ == "__main__":
