@@ -11,6 +11,7 @@ def cyclic_sort(nums):
     # iterate through the nums array each index at a time
     # if the number is not in the correct spot swap it with the number in the right index
     # else move to the next index
+    #
     i = 0
     while i < len(nums):
         j = nums[i] - 1

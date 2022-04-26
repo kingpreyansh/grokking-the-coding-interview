@@ -5,7 +5,7 @@
 # Explanation: The array should have all numbers from 1 to 8, due to duplicates 4, 6, and 7 are missing.
 # Leetcode Equivalent:
 # Optimal solution:
-
+#
 def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
     # sort the array with aone pass method and once that's done
     # go through the sorted array and see which numbers are out of place
