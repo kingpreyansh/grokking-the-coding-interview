@@ -13,23 +13,27 @@ class Node:
 
 
 def rotateRight(head, k):
-
+    # if the head is none return None
     if head is None:
         return head
 
+    # get the tail of the linked list
     length, tail = 1, head
     while tail.next:
         tail = tail.next
         length += 1
 
+    # compute how many final rotations there are
     k = k % length
     if k == 0:
         return head
 
+    # go to the last element in the linkedlist after k rotations
     cur = head
     for i in range(length - k - 1):
         cur = cur.next
 
+    # fix pointers
     tmp = cur.next
     cur.next = None
     tail.next = head
